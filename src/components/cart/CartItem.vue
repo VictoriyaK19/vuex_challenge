@@ -26,7 +26,7 @@ export default {
   props: ['prodId', 'title', 'image', 'price', 'qty'],
   computed: {
     itemTotal() {
-      return (this.price * this.qty).toFixed(2);
+      return Number.parseFloat(this.price * this.qty).toFixed(2);
     },
   },
   methods: {
