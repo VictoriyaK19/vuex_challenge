@@ -1,16 +1,16 @@
-import { createStore } from "vuex";
+import { createStore } from 'vuex';
 
-import productModule from "./modules/product.js";
-import cartModule from "./modules/cart.js";
+import productsModule from './modules/products.js';
+import cartModule from './modules/cart.js';
 
 const store = createStore({
   modules: {
-    prods: productModule,
-    cart: cartModule,
+    prods: productsModule,
+    cart: cartModule
   },
   state() {
     return {
-      isLoggedIn: false,
+      isLoggedIn: false
     };
   },
   mutations: {
@@ -20,19 +20,18 @@ const store = createStore({
     logout(state) {
       state.isLoggedIn = false;
     },
-    
   },
   actions: {
     login(context) {
-        context.commit('login');
+      context.commit('login');
     },
     logout(context) {
-        context.commit('logout');
-    }
+      context.commit('logout');
+    },
   },
   getters: {
     isAuthenticated(state) {
-        return state.isLoggedIn;
+      return state.isLoggedIn;
     }
   }
 });
